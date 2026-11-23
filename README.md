@@ -63,14 +63,15 @@ Keep Ollama running. To use a different model, set `AGENT_MODEL`, for example `A
 
 ```bash
 python agent.py --task bug_summary          # main task
-python agent.py --task close_request        # problem case: forbidden write action
+python agent.py --task close_request        # problem case: forbidden write action (model is told the policy)
+python agent.py --task close_request_no_hint   # same request, policy hidden from the model: Python must block close_issue
 python agent.py --task missing_issue        # problem case: issue #42 does not exist
 python agent.py --task bug_summary --inject-failure 6        # problem case: tool failure
 python agent.py --task bug_summary --server no_such_server.py   # problem case: server unavailable
 python agent.py --ask "Which open issues mention Android?"   # free-text request (generic checks)
 ```
 
-Or run all five demos with `./run_demos.sh`.
+Or run all six demos with `./run_demos.sh`. The script uses `.venv/bin/python` automatically if the virtual environment exists.
 
 The console shows each step: the model's thought, its chosen action, the policy decision, the tool result, and the final checks. Every run saves `trace.json` and `result.json` under `runs/<timestamp>_<task>/`.
 
@@ -101,6 +102,7 @@ runs/             saved traces from real runs
 
 - The only data is a local JSON file of fictional issues. Nothing connects to GitHub.
 - Write access is blocked twice: the client-side policy refuses `close_issue` before it runs, and the server's `close_issue` never writes anything.
+- The `close_request_no_hint` demo hides the policy from the model, so the refusal comes from Python, not from the model's good behavior.
 - The final check confirms the data file hash is unchanged.
 
 ## Limitations
