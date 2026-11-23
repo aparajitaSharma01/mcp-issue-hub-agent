@@ -1,0 +1,100 @@
+{
+  "repository": "sample-org/tinynotes",
+  "note": "Fictional sample data for a course project. Not a live repository.",
+  "issues": [
+    {
+      "number": 1,
+      "title": "App crashes when saving a note with an emoji in the title",
+      "state": "open",
+      "labels": ["bug", "priority: high"],
+      "author": "maria-dev",
+      "created_at": "2026-10-02",
+      "body": "Steps: create a new note, type a title containing an emoji, press Save. The app closes immediately. Happens on version 1.3.0 on both Android and iOS. Notes without emoji save fine.",
+      "comments": [
+        {"author": "kenji-t", "text": "Same here. The crash log shows an encoding error in the title field."},
+        {"author": "maintainer-ana", "text": "Confirmed. Probably the title is stored with the wrong character encoding."}
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Add dark mode",
+      "state": "open",
+      "labels": ["enhancement"],
+      "author": "lee-s",
+      "created_at": "2026-09-20",
+      "body": "Please add a dark theme. The white background is hard to use at night.",
+      "comments": [
+        {"author": "maintainer-ana", "text": "Planned for version 1.5."}
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Sync creates duplicate notes",
+      "state": "closed",
+      "labels": ["bug", "priority: high"],
+      "author": "omar-k",
+      "created_at": "2026-08-11",
+      "body": "After syncing two devices, every note appears twice.",
+      "comments": [
+        {"author": "maintainer-ana", "text": "Fixed in version 1.2. Closing."}
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Search finds nothing for words with accents",
+      "state": "open",
+      "labels": ["bug", "priority: medium"],
+      "author": "chloe-r",
+      "created_at": "2026-10-09",
+      "body": "Searching for 'cafe' finds my notes, but searching for 'caf\u00e9' returns no results, even though the note contains 'caf\u00e9'.",
+      "comments": [
+        {"author": "kenji-t", "text": "Looks like search does not normalize accented characters."}
+      ]
+    },
+    {
+      "number": 5,
+      "title": "How do I export notes to PDF?",
+      "state": "open",
+      "labels": ["question"],
+      "author": "priya-n",
+      "created_at": "2026-10-14",
+      "body": "Is there a way to export a note as a PDF? I could not find it in the menu.",
+      "comments": []
+    },
+    {
+      "number": 6,
+      "title": "Login session expires after 5 minutes on Android",
+      "state": "open",
+      "labels": ["bug", "priority: high"],
+      "author": "david-m",
+      "created_at": "2026-10-18",
+      "body": "On Android, I am logged out about 5 minutes after logging in, every time. On iOS the session lasts for days.",
+      "comments": [
+        {"author": "maintainer-ana", "text": "The Android token refresh may be failing silently. Needs investigation."},
+        {"author": "david-m", "text": "Still happening on 1.3.1."}
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Add keyboard shortcuts",
+      "state": "closed",
+      "labels": ["enhancement"],
+      "author": "lee-s",
+      "created_at": "2026-07-30",
+      "body": "Ctrl+N for a new note and Ctrl+F for search would be helpful.",
+      "comments": [
+        {"author": "maintainer-ana", "text": "Shipped in version 1.1."}
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Typo on settings page: 'Prefrences'",
+      "state": "open",
+      "labels": ["bug", "priority: low", "good first issue"],
+      "author": "sam-w",
+      "created_at": "2026-10-21",
+      "body": "The settings page heading says 'Prefrences' instead of 'Preferences'.",
+      "comments": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "task": "bug_summary_server_down",
+  "prompt": "Prepare a triage summary of all OPEN issues labeled 'bug' in the sample repository. For each issue, write one line with its number as #N, a short description of the problem, and its priority. Read each issue with get_issue before you summarize it.",
+  "stop_reason": "mcp_server_unavailable: MCP server script not found: no_such_server.py",
+  "steps": 0,
+  "final_answer": "",
+  "final_checks": [],
+  "evidence": {}
+}
