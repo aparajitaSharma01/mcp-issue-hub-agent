@@ -48,7 +48,7 @@ If any check fails, the model is told which one and must keep working.
 Requires Python 3.10+ and [Ollama](https://ollama.com).
 
 ```bash
-git clone <repo-url>
+git clone git clone https://github.com/aparajitaSharma01/mcp-issue-hub-agent.git
 cd mcp-issue-hub-agent
 python3 -m venv .venv
 source .venv/bin/activate
